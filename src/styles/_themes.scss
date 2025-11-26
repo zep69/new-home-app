@@ -1,0 +1,21 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #111111;
+  --text-color-secondary:rgb(88, 88, 88);
+  --primary-color: #4f46e5;
+  --border-color: #e5e7eb;
+  --bg-color-elements:#e4e4e4;
+  --success-color:rgb(5, 185, 5);
+  --success-color-text:#111111;
+}
+
+.dark {
+  --bg-color: #1f1f1f;
+  --text-color: #e5e7eb;
+  --text-color-secondary:rgb(155, 155, 155);
+  --primary-color: #6366f1;
+  --border-color: #1e293b;
+  --bg-color-elements:#141414;
+  --success-color:rgb(4, 216, 4);
+  --success-color-text:#111111;
+}
