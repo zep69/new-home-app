@@ -39,7 +39,7 @@ function clikcButton(){
       <button style="margin-left: 10px;">Раз два</button>
     </template>
     <template #center>
-      <Button color="success" variant="tonal" @click="clikcButton">
+      <Button color="warn" variant="outlined" @click="clikcButton">
         Kaka фывфыв фыв фыв фыв 
       </Button>
     </template>

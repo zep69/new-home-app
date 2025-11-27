@@ -9,8 +9,8 @@ import {ref, defineProps, computed} from 'vue'
 
 const props = withDefaults(
   defineProps<{
-    variant?: 'default' | 'tonal' | 'text'
-    color?: 'primary' | 'success' | 'error'
+    variant?: 'default' | 'tonal' | 'text' | 'outlined'
+    color?: 'primary' | 'success' | 'error' | 'warn'
   }>(),
   {
     variant: 'default',
@@ -29,7 +29,7 @@ const props = withDefaults(
   border: none;
   cursor: pointer;
   font-weight: 500;
-  transition: background 0.3s, color 0.3s;
+  transition: all 1s;
 
   &--default {
     background: var(--primary-color);
@@ -42,6 +42,11 @@ const props = withDefaults(
   &--text {
     background: transparent;
     color: var(--primary-color);
+  }
+  &--outlined {
+    background: transparent;
+    color: var(--primary-color);
+    border: solid var(--primary-color) 1px;
   }
 
   &--primary {
@@ -56,6 +61,16 @@ const props = withDefaults(
     --primary-color: #dc2626;
     --primary-color-tint: #fee2e2;
   }
+  &--warn {
+    --primary-color: orange;
+    --primary-color-tint: rgb(255, 224, 168); 
+  }
+}
+.btn:hover{
+  //transform: translateY(-5px);
+  -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 }
 
 </style>

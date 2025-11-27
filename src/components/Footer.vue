@@ -26,7 +26,6 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    background: #111;
     color: white;
 }
 .content {

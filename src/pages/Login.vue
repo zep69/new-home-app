@@ -13,6 +13,8 @@
                 <input type="text">
                 <br>
                 <input type="text">
+                <br>
+                <Input placeholder="123123"/>
             </div>
         </template>
     </Card>
@@ -21,6 +23,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import Card from '@/components/Card/Card.vue';
+import Input from '@/components/inputs/Input.vue';
 
 const text = ref<string>('Какапука')
 </script>
