@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import {ref, defineProps, computed} from 'vue'
+import {ref, computed} from 'vue'
 
 const props = withDefaults(
   defineProps<{
@@ -29,11 +29,12 @@ const props = withDefaults(
   border: none;
   cursor: pointer;
   font-weight: 500;
-  transition: all 1s;
+  transition: all 500ms;
 
   &--default {
     background: var(--primary-color);
     color: white;
+    
   }
   &--tonal {
     background: var(--primary-color-tint);
@@ -67,10 +68,7 @@ const props = withDefaults(
   }
 }
 .btn:hover{
-  //transform: translateY(-5px);
-  -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-  -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  filter: brightness(80%);
 }
 
 </style>

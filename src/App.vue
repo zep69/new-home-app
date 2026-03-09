@@ -3,7 +3,9 @@ import { ref, onMounted } from 'vue'
 import Header from './components/Header.vue'
 import Button from './components/buttons/Button.vue'
 import Footer from './components/Footer.vue'
+import dotenv from 'dotenv'
 const isDark = ref<boolean>(false)
+
 
 const year : number = new Date().getFullYear()
 
@@ -33,37 +35,15 @@ function clikcButton(){
 
 <template>
   <body>
-   <Header>
-    <template #start>
-      <button @click="toggleTheme">Раздва три</button>
-      <button style="margin-left: 10px;">Раз два</button>
-    </template>
-    <template #center>
-      <Button color="warn" variant="outlined" @click="clikcButton">
-        Kaka фывфыв фыв фыв фыв 
-      </Button>
-    </template>
-    <template #end>
-      <button>
-        Выход
-      </button>
-    </template>
-  </Header> 
-    
-
-    
-
     <div class="main">
       <router-view></router-view>
     </div>
-
   </body>
   <Footer>
     <template #end>
       <p class="footer-text">Pikalov Nikita, {{ year }}</p>
     </template>
   </Footer>
-  
 </template>
 
 <style scoped lang="scss">

@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
-import login from '@/pages/Login.vue'
+import login from '@/pages/Login.vue';
+import Main from '@/pages/Main.vue';
+import Profile from '@/pages/main/Profile.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -11,6 +13,18 @@ const routes: Array<RouteRecordRaw> = [
     path: '/',
     redirect: '/login',
   },
+  {
+    path:'/main',
+    name:'Main',
+    component:Main,
+    children:[
+      {
+        path:'/main/profile',
+        name:'Profile',
+        component:Profile
+      }
+    ]
+  }
 ]
 
 const router = createRouter({

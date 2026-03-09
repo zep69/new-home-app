@@ -17,10 +17,15 @@ body {
 }
 
 button {
-  background: var(--primary-color);
+  background-color: var(--primary-color);
   color: white;
   border: none;
   padding: 10px 16px;
   border-radius: 8px;
   cursor: pointer;
+  transition: 250ms;
+  &:hover {
+    transition: 250ms;
+    background-color: var(--bg-color);
+  }
 }

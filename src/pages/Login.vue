@@ -1,8 +1,8 @@
 <template>
-    <div style="display: flex;justify-content: center;align-items: center;">
+    <div class="login-wrapper">
         <Card style="width: 400px;">
             <template #header >
-                <div style="padding: 10px;margin-left: 10px;">
+                <div style="padding: 10px;margin-left: 10px; display: flex; justify-content: center;">
                     <h1>Войдите в систему</h1> 
                 </div>
             </template>
@@ -15,9 +15,6 @@
                                 Войти
                             </Button>
                         </div>
-                        
-                
-
                 </div>
             </template>
         </Card>
@@ -49,5 +46,11 @@ const text = ref<string>('Какапука')
 </script>
 
 <style scoped lang="scss">
-
+.login-wrapper {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   height: 90vh;
+}
 </style>
