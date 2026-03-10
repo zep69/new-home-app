@@ -18,6 +18,9 @@
                             <Button variant="default">
                                 Редактировать
                             </Button>
+                            <Button style="margin-left: 5px;" variant="default" color="error">
+                                Выйти
+                            </Button>
                         </div>
                     </div>
                 </div>
