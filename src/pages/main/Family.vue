@@ -37,7 +37,31 @@
                                         <span>{{ item.name }}</span>
                                         <span>{{ item.sum}}</span>
                                     </div>
-                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </Card>
+        <Card style="margin-top: 10px;">
+            <template #body>
+                <div class="family--wishlist">
+                    <h2>Вишлист: </h2>
+                    <div class="family--wishlist--block">
+                        <div v-for="item in wishlist" class="family--wishlist--block--item">
+                            <div style="display: flex; align-items: center;">
+                                <div class="family--wishlist--block--item--author">
+                                    <img :src="item.author.avatar" class="family--wishlist--block--item--author--avatar" alt="">
+                                    {{ item.author.firstname }} {{ item.author.surname }}
+                                </div>
+                                <div class="family--wishlist--block--item--name">
+                                    {{ item.name }}
+                                </div>
+                            </div>
+                            <div>
+                                <div class="family--wishlist--block--item--sum">
+                                    Стоимость {{ item.sum }} Рублей
                                 </div>
                             </div>
                         </div>
@@ -56,6 +80,35 @@ import { Doughnut } from 'vue-chartjs'
 
 ChartJS.register(ArcElement, Tooltip)
 
+type Wish = {
+    name : string,
+    author : Member,
+    isDone : boolean,
+    sum : number
+}
+
+const wishlist = ref<Wish[]>([
+    {
+        name:'Moza R12',
+        author: {
+            firstname: 'Test',
+            surname:'Test',
+            avatar: 'https://media.istockphoto.com/id/2212478701/vector/monochrome-female-silhouette-with-short-hair.jpg?s=612x612&w=0&k=20&c=Q_6Z6fOgbLwV3lBeCOYybXNNkkeTj8bjUMlIcy8aGtI='
+        },
+        isDone: false,
+        sum:30000
+    },
+    {
+        name:'Test testiq',
+        author: {
+            firstname: 'Test',
+            surname:'Test',
+            avatar: 'https://media.istockphoto.com/id/2212478701/vector/monochrome-female-silhouette-with-short-hair.jpg?s=612x612&w=0&k=20&c=Q_6Z6fOgbLwV3lBeCOYybXNNkkeTj8bjUMlIcy8aGtI='
+        },
+        isDone: false,
+        sum:80000
+    },
+])
 
 type Purchase = {
     name : string,
@@ -174,6 +227,7 @@ const chartOption = ref({
         &--info {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             &--chart {
                 height: 150px;
                 width: 150px;
@@ -203,9 +257,52 @@ const chartOption = ref({
                         }
                         &--true {
                             color: var(--success-color);
-                            background-color: rgb(31, 53, 31);
+                            background-color: var(--success-color-tonal);
                         }
                     }
+                }
+            }
+        }
+    }
+    &--wishlist {
+        padding: 20px;
+        &--block {
+            margin-top: 10px;
+            &--item {
+                display: flex;
+                justify-content: space-between;
+                border: thin solid var(--primary-color);
+                padding: 5px;
+                border-radius: 10px;
+                margin-bottom: 10px;
+                &--author {
+                    background-color: var(--primary-hover);
+                    border: none;
+                    border-radius: 10px;
+                    padding: 5px;
+                    margin-right: 5px;
+                    display: flex;
+                    align-items: center;
+                    &--avatar {
+                        height: 20px;
+                        width: 20px;
+                        border-radius: 50%;
+                        margin-right: 5px;
+                    }
+                }
+                &--sum {
+                    background-color: var(--success-color-tonal);
+                    border: none;
+                    border-radius: 10px;
+                    padding: 5px;
+                    margin-right: 5px;
+                    display: flex;
+                    align-items: center;
+                }
+                &--name {
+                    display: flex;
+                    align-items: center;
+                    padding: 5px;
                 }
             }
         }

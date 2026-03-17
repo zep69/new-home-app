@@ -18,6 +18,7 @@ const routes: Array<RouteRecordRaw> = [
     path:'/main',
     name:'Main',
     component:Main,
+    redirect:'/main/profile',
     children:[
       {
         path:'/main/profile',
