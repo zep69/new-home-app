@@ -14,7 +14,7 @@
                                 <span>День рождения: <span style="color: var(--primary-color);">01.01.2000</span></span>
                             </div>
                         </div>
-                        <div>
+                        <div style="overflow: hidden;">
                             <Button variant="default">
                                 Редактировать
                             </Button>

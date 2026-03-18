@@ -22,12 +22,12 @@ const routes: Array<RouteRecordRaw> = [
     children:[
       {
         path:'/main/profile',
-        name:'Profile',
+        name:'Профиль',
         component:Profile
       },
       {
         path:'/main/family',
-        name:'Family',
+        name:'Семья',
         component:Family
       }
     ]

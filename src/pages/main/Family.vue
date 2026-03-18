@@ -61,7 +61,7 @@
                             </div>
                             <div>
                                 <div class="family--wishlist--block--item--sum">
-                                    Стоимость {{ item.sum }} Рублей
+                                    {{ item.sum }} Рублей
                                 </div>
                             </div>
                         </div>
@@ -77,6 +77,7 @@ import {ref} from 'vue'
 import Card from '@/components/Card/Card.vue';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
 import { Doughnut } from 'vue-chartjs'
+import '../../styles/family.scss'
 
 ChartJS.register(ArcElement, Tooltip)
 
@@ -180,132 +181,5 @@ const chartOption = ref({
 </script>
 
 <style scoped lang="scss">
-.family {
-    display: flex;
-    flex-direction: column;
-    &--info {
-        padding: 20px;
-        &--name {
-            color: var(--primary-color);
-        }
-    }
-    &--members {
-        padding: 20px;
-        &--block {
-            margin-top: 10px;
-            display: flex;
-            justify-content: start;
-            align-items: center;
-            &--item {
-                padding: 15px;
-                display: flex;
-                justify-content: start;
-                align-items: center;
-                border: thin solid var(--primary-color);
-                margin-right: 15px;
-                border-radius: 30px;
-                font-size: 20px;
-                transition: all 250ms;
-                &--img {
-                    height: 40px;
-                    width: 40px;
-                    margin-right: 10px;
-                    border-radius: 50%;
-                }
-                &:hover {
-                    cursor: pointer;
-                    background-color: var(--primary-hover);
-                }
-                &:active {
-                    transform: translateY(-5px);
-                }
-            }
-        }
-    }
-    &--balance {
-        padding: 20px;
-        &--info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            &--chart {
-                height: 150px;
-                width: 150px;
-            }
-            &--cash {
-                display: flex;
-                flex-direction: column;
-                &--sum {
-                    color: var(--primary-color);
-                    font-size: 25px;
-                }
-                &--last {
-                    display: flex;
-                    flex-direction: column;
-                    border: thin solid var(--border-default);
-                    padding: 10px;
-                    border-radius: 10px;
-                    &--item {
-                        display: flex;
-                        padding: 3px;
-                        justify-content: space-between;
-                        border-radius: 5px;
-                        margin: 2px;
-                        &--false {
-                            color: red;
-                            background-color: rgb(63, 34, 34);
-                        }
-                        &--true {
-                            color: var(--success-color);
-                            background-color: var(--success-color-tonal);
-                        }
-                    }
-                }
-            }
-        }
-    }
-    &--wishlist {
-        padding: 20px;
-        &--block {
-            margin-top: 10px;
-            &--item {
-                display: flex;
-                justify-content: space-between;
-                border: thin solid var(--primary-color);
-                padding: 5px;
-                border-radius: 10px;
-                margin-bottom: 10px;
-                &--author {
-                    background-color: var(--primary-hover);
-                    border: none;
-                    border-radius: 10px;
-                    padding: 5px;
-                    margin-right: 5px;
-                    display: flex;
-                    align-items: center;
-                    &--avatar {
-                        height: 20px;
-                        width: 20px;
-                        border-radius: 50%;
-                        margin-right: 5px;
-                    }
-                }
-                &--sum {
-                    background-color: var(--success-color-tonal);
-                    border: none;
-                    border-radius: 10px;
-                    padding: 5px;
-                    margin-right: 5px;
-                    display: flex;
-                    align-items: center;
-                }
-                &--name {
-                    display: flex;
-                    align-items: center;
-                    padding: 5px;
-                }
-            }
-        }
-    }
-}
+
 </style>
