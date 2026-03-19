@@ -124,6 +124,7 @@ const modules = ref<Module[]>([
                 padding: 10px;
                 border-radius: 10px;
                 background-color: var(--primary-color);
+                color:var(--button-text);
                 margin-right: 5px;
                 transition: 250ms all;
                 &:hover {
