@@ -33,6 +33,7 @@ const { toggleTheme, isDark } = useTheme()
     color: white;
     box-shadow: 0px 0px 34px -8px rgba(0,0,0,0.36);
     &--title {
+        height: 100%;
         padding: 5px;
         display: flex;
         justify-content: space-between;
@@ -45,6 +46,7 @@ const { toggleTheme, isDark } = useTheme()
             color: var(--primary-color);
             font-size: 20px;
             outline: none;
+            border: none;
             -webkit-tap-highlight-color: transparent;
         }
     }

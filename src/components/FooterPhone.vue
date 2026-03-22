@@ -5,18 +5,23 @@
                 <i class="mdi mdi-account footer--nav--btn--icon"></i>
                 <span>Профиль</span>
             </button>
-            <button :class="['footer--nav--btn', returnActiveClass('/main/money')]">
-                <i class="mdi mdi-chart-donut footer--nav--btn--icon "></i>
-                <span>Бюджет</span>
-            </button>
-            <button :class="['footer--nav--btn', returnActiveClass('/main/wishlist')]">
-                <i class="mdi mdi-format-list-checks footer--nav--btn--icon"></i>
-                <span>Вишлист</span>
-            </button>
             <button :class="['footer--nav--btn', returnActiveClass('/main/family')]" @click="$router.push('/main/family')">
                 <i class="mdi mdi-account-group footer--nav--btn--icon"></i>
                 <span>Семья</span>
             </button>
+            <button :class="['footer--nav--btn', returnActiveClass('/main/budget')]" @click="$router.push('/main/budget')">
+                <i class="mdi mdi-chart-donut footer--nav--btn--icon "></i>
+                <span>Бюджет</span>
+            </button>
+            <button :class="['footer--nav--btn', returnActiveClass('/main/wishlist')]" @click="$router.push('/main/wishlist')">
+                <i class="mdi mdi-format-list-checks footer--nav--btn--icon"></i>
+                <span>Вишлист</span>
+            </button>
+            <button :class="['footer--nav--btn', returnActiveClass('/main/pantry')]" @click="$router.push('/main/pantry')">
+                <i class="mdi mdi-archive footer--nav--btn--icon"></i>
+                <span>Кладовая</span>
+            </button>
+
         </div>
 
     </div>
@@ -61,6 +66,7 @@
             color: var(--text-color);
             transition: 250ms;
             outline: none;
+            border: none;
             -webkit-tap-highlight-color: transparent;
             &--icon {
                 font-size: 30px;

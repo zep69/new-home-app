@@ -27,7 +27,7 @@
             </template>
         </Card>
 
-        <Card style="margin-top: 20px;">
+        <Card style="margin-top: 10px;">
             <template #body>
                 <div class="profile--family">
                     <div class="profile--family--name">

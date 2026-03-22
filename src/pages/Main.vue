@@ -31,7 +31,7 @@ import { RouterView } from 'vue-router';
 }
 @media screen and (max-width: 768px) { 
     .router {
-        width: 400px;
+        width: 350px;
     }
 }
 </style>

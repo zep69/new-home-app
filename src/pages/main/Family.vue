@@ -1,74 +1,56 @@
 <template>
     <div class="family">
-        <Card>
-            <template #body>
-                <div class="family--info">
-                    <h2>Семья: <span class="family--info--name">Test</span>  </h2>
-                </div>
-            </template>
-        </Card>
-        <Card style="margin-top: 10px;">
-            <template #body>
-                <div class="family--members">
-                    <h2>Участники:</h2>
-                    <div class="family--members--block">
-                        <div v-for="item in members" class="family--members--block--item">
-                            <img :src="item.avatar" class="family--members--block--item--img" alt="">
-                            <span>{{ item.firstname }} {{ item.surname }}</span>
-                        </div>
-                    </div>
-                </div>
-            </template>
-        </Card>
+        <h1>
+            Привет, Имя Фамилия! <br>
+        </h1>
+        <span>Вот небольшая сводка: </span>
         <Card style="margin-top: 10px;">
             <template #body>
                 <div class="family--balance">
-                    <h2>Бюджет: </h2>
-                    <div class="family--balance--info">
-                        <div class="family--balance--info--chart">
-                            <Doughnut  :data="chartDonut" :options="chartOption"/>
-                        </div>
-                        <div class="family--balance--info--cash">
-                            <span>Баланс: <span class="family--balance--info--cash--sum">777777 ₽</span></span>
-                            <div class="family--balance--info--cash--last">
-                                <span>Последние начисления и списания: </span>
-                                <div v-for="item in purchases" >
-                                    <div :class="['family--balance--info--cash--last--item', `family--balance--info--cash--last--item--${item.add}`]">
-                                        <span>{{ item.name }}</span>
-                                        <span>{{ item.sum}}</span>
-                                    </div>
-                                </div>
+                    <h2>Семейный бюджет </h2>
+                    <div class="family--balance--card">
+                        <div class="family--balance--card--monyeline">
+                            <h2>120 000 ₽</h2>
+                            <div class="family--balance--card--monyeline--icon">
+                                <i class="mdi mdi-cash "></i>
                             </div>
+                        </div>
+                        <div class="family--balance--card--checkpoint">
+                            <span>У вас не задана цель</span>
                         </div>
                     </div>
                 </div>
             </template>
         </Card>
-        <Card style="margin-top: 10px;">
-            <template #body>
-                <div class="family--wishlist">
-                    <h2>Вишлист: </h2>
-                    <div class="family--wishlist--block">
-                        <div v-for="item in wishlist" class="family--wishlist--block--item">
-                            <div style="display: flex; align-items: center;">
-                                <div class="family--wishlist--block--item--author">
-                                    <img :src="item.author.avatar" class="family--wishlist--block--item--author--avatar" alt="">
-                                    {{ item.author.firstname }} {{ item.author.surname }}
-                                </div>
-                                <div class="family--wishlist--block--item--name">
-                                    {{ item.name }}
-                                </div>
-                            </div>
-                            <div>
-                                <div class="family--wishlist--block--item--sum">
-                                    {{ item.sum }} Рублей
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <div class="family--stock">
+            <div class=" family--stock--block family--stock--block--need">
+                <i class="mdi mdi-cart family--stock--block--icon"></i>
+                <h3>Уже закончилось</h3>
+                <div v-for="item in needarr" style="display: flex;justify-content: start;margin-bottom: 5px; align-items: center;">
+                    <div class="family--stock--block--need--dot"></div>
+                    <span>{{ item }}</span>
                 </div>
-            </template>
-        </Card>
+                <div style="display: flex;justify-content: end;">
+                    <span class="family--stock--block--need--span">Список</span>
+                </div>
+            </div>
+            <div class="family--stock--block family--stock--block--empty">
+                <i class="mdi mdi-store-alert family--stock--block--icon"></i>
+                <h3>Скоро закончится</h3>
+                <div v-for="item in empty" style="display: flex;justify-content: start;margin-bottom: 5px; align-items: center;">
+                    <div class="family--stock--block--empty--dot"></div>
+                    <span>{{ item }}</span>
+                </div>
+                <div style="display: flex;justify-content: end;">
+                    <span class="family--stock--block--empty--span">Пополнить</span>
+                </div>
+            </div>
+        </div>
+        <div class="family--wishlist">
+            <span>У вас есть предметы в вишлисте</span>
+            <button class="button-default ">Посмореть</button>
+        </div>
+
     </div>
 </template>
 
@@ -80,6 +62,10 @@ import { Doughnut } from 'vue-chartjs'
 import '../../styles/family.scss'
 
 ChartJS.register(ArcElement, Tooltip)
+
+const empty = ref<string[]>(['Зубная паста', 'Гречка'])
+
+const needarr = ref<string[]>(['Яйца', 'Хлеб'])
 
 type Wish = {
     name : string,

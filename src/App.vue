@@ -57,7 +57,7 @@ function clikcButton(){
   display: none;
 }
 .footer {
-
+  display: flex;
 }
 .footer-phone {
   display: none;

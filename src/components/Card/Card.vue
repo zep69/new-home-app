@@ -19,6 +19,6 @@
 <style scoped>
 .card{
     background-color: var(--bg-color-elements);
-    border-radius: 30px;
+    border-radius: 15px;
 }
 </style>

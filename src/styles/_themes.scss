@@ -13,7 +13,7 @@
 
   --button-text: #F9F8F3;
 
-  
+  --red-dot: rgb(255, 91, 91);
 
 
   //material-colors
@@ -29,7 +29,7 @@
   --primary-color-t9: #E1F7DC;
   --primary-color-t10: #FFFFFF;
 
-  --secondary-color:#7A8C99;
+  --secondary-color:#B6C9D7;
   --secondary-color-t0:#000000;
   --secondary-color-t1:#0B1D28;
   --secondary-color-t2:#21323D;
@@ -45,7 +45,7 @@
 
 .dark {
   --bg-color: #121411;
-  --text-color: #D4C5B3;
+  --text-color: #d4c5b2;
   --text-color-secondary:rgb(155, 155, 155);
   --primary-color: #B8CCB3;
   --border-color: #1e293b;
@@ -57,4 +57,31 @@
   --success-color-tonal:rgb(26, 56, 26);
 
   --button-text : #263725;
+
+  --red-dot: rgb(110, 0, 0);
+
+  --primary-color-t10: #000000;
+  --primary-color-t9: #0F1F0F;
+  --primary-color-t8: #233522;
+  --primary-color-t7: #394B38;
+  --primary-color-t6: #51634E;
+  --primary-color-t5: #697C66;
+  --primary-color-t5: #82967F;
+  --primary-color-t4: #9DB198;
+  --primary-color-t2: #D3E8CE;
+  --primary-color-t1: #E1F7DC;
+  --primary-color-t0: #FFFFFF;
+
+  --secondary-color:#5A6B5C;
+  --secondary-color-t10:#101F13;
+  --secondary-color-t9:#243427;
+  --secondary-color-t8:#3A4B3D;
+  --secondary-color-t7:#526354;
+  --secondary-color-t6:#6A7B6C;
+  --secondary-color-t5:#839585;
+  --secondary-color-t4:#9EB09F;
+  --secondary-color-t3:#B9CBB9;
+  --secondary-color-t2:#D5E7D5;
+  --secondary-color-t1:#E3F6E3;
+  --secondary-color-t0:#FFFFFF;
 }
