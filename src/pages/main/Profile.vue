@@ -1,49 +1,28 @@
 <template>
     <div class="profile">
-        <Card>
-            <template #body>
+        <img class="profile--avatar" src="https://media.istockphoto.com/id/2212478701/vector/monochrome-female-silhouette-with-short-hair.jpg?s=612x612&w=0&k=20&c=Q_6Z6fOgbLwV3lBeCOYybXNNkkeTj8bjUMlIcy8aGtI=" alt="">
+        <h2 class="profile--name">Name Name</h2>
+        <span>tesiq</span>
+        <div class="profile--subplan">
+            <div class="profile--subplan--status">
                 <div>
-                    <div class="profile--info">
-                        <div style="display: flex; align-items: center;">
-                            <img class="profile--info--avatar" src="https://media.istockphoto.com/id/2212478701/vector/monochrome-female-silhouette-with-short-hair.jpg?s=612x612&w=0&k=20&c=Q_6Z6fOgbLwV3lBeCOYybXNNkkeTj8bjUMlIcy8aGtI=" alt="">
-                            <div style="margin-left: 20px;">
-                                <span class="profile--info--name">Name Name</span>
-                                <br>
-                                <span>email: <span style="color: var(--primary-color);">test@test.com</span> </span>
-                                <br>
-                                <span>День рождения: <span style="color: var(--primary-color);">01.01.2000</span></span>
-                            </div>
-                        </div>
-                        <div style="overflow: hidden;">
-                            <Button variant="default">
-                                Редактировать
-                            </Button>
-                            <Button style="margin-left: 5px;" variant="default" color="error">
-                                Выйти
-                            </Button>
-                        </div>
-                    </div>
+                    <i class="mdi mdi-lock-check-outline"></i>
+                    Статус подписки
                 </div>
-            </template>
-        </Card>
+                <div class="profile--subplan--status--badge">
+                    Активная
+                </div>
+            </div>
+            <h2 style="margin-top: 10px;">Максимальный уровень </h2>
+            <span>Бесконечная</span>
+        </div>
+        <div class="profile--settings">
+            <span class="">Настройки аккаунта</span>
+            <div class="profile--settings--block">
 
-        <Card style="margin-top: 10px;">
-            <template #body>
-                <div class="profile--family">
-                    <div class="profile--family--name">
-                        <h2>Вы состоите в семье</h2>
-                        <span class="profile--family--name--colorise"> Пикаловы</span>
-                    </div>
-                    <div class="profile--family--modules">
-                        <div v-for="item in modules" :key="item.name" class="profile--family--modules--item">
-                            <i :class="['mdi', item.icon]"></i>
-                            <span>{{ item.name }}</span>
-                        </div>
-                    </div>
-                </div>
-                
-            </template>
-        </Card>
+            </div>
+        </div>
+        
     </div>
 </template>
 
@@ -80,58 +59,51 @@ const modules = ref<Module[]>([
 .profile {
     display: flex;
     flex-direction: column;
-    &--info {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px;
-        &--name {
-            font-size: 20px;
-        }
-        &--avatar {
-            border-radius: 50%;
-            height: 150px;
-            width: 150px;
-        }
+    align-items: center;
+    &--avatar {
+        margin-top: 20px;
+        height: 140px;
+        width: 140px;
+        border-radius: 50%;
+        border: 3px solid white;
     }
-    &--family {
+    &--name {
+        margin-top: 10px;
+    }
+    &--subplan {
+        margin-top: 40px;
+        background-color: var(--primary-color-t8);
+        padding: 20px;
+        width: 100%;
         display: flex;
         flex-direction: column;
-        align-items: start;
-        padding: 20px;
-        &--name {
+        border-radius: 15px;
+        &--status {
             display: flex;
-            justify-content: start;
+            justify-content: space-between;
             align-items: center;
-            &--colorise {
-                color: var(--primary-color); 
-                font-size: 20px; 
-                margin-left: 10px;
-                transition: all 250ms;
-                &:hover {
-                    cursor: pointer;
-                    transition: all 250ms;
-                    transform: translateY(-5px);
-                }
+            &--title {
+
+            }
+            &--badge {
+                background-color: var(--primary-color-t4);
+                padding: 5px;
+                border-radius: 15px;
+                color: var(--primary-color-t8);
+                font-size: 15px;
+                font-weight: 500;
             }
         }
-        &--modules {
-            display: flex;
-            justify-content: start; 
-            align-items: center;
+        
+    }
+    &--settings {
+        margin-top: 10px;
+        width: 100%;
+        &--block {
+            background-color: var(--bg-color-elements);
+            border-radius: 15px;
+            padding: 15px;
             margin-top: 10px;
-            &--item {
-                padding: 10px;
-                border-radius: 10px;
-                background-color: var(--primary-color);
-                color:var(--button-text);
-                margin-right: 5px;
-                transition: 250ms all;
-                &:hover {
-                    cursor: pointer;
-                    transform: translateY(-5px);
-                }
-            }
         }
     }
 }
