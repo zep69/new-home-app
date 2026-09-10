@@ -32,6 +32,7 @@ const { toggleTheme, isDark } = useTheme()
     width: 100%;
     color: white;
     box-shadow: 0px 0px 34px -8px rgba(0,0,0,0.36);
+    z-index: 1000;
     &--title {
         height: 100%;
         padding: 5px;
